@@ -14,7 +14,9 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
+    "formik": "^2.1.4",
     "gatsby": "^2.19.7",
+    "gatsby-plugin-create-client-paths": "^2.1.22",
     "gatsby-plugin-local-search": "^1.1.0",
     "gatsby-source-filesystem": "^2.1.48",
     "gatsby-transformer-csv": "^2.1.26",

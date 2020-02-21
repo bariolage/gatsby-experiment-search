@@ -17,6 +17,10 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-create-client-paths`,
+      options: { prefixes: [`/search/*`] },
+    },
+    {
       resolve: "gatsby-plugin-local-search",
       options: {
         name: "pages",
@@ -38,9 +42,7 @@ module.exports = {
         ref: "id",
         normalizer: ({ data }) =>
           data.allEwokBaseCsv.nodes.map(node => ({
-            id: node.id,
-            title: node.name,
-            body: node.description,
+            ...node,
           })),
       },
     },
