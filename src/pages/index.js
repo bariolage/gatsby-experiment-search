@@ -1,23 +1,19 @@
 import React, { useState } from "react"
+import { graphql } from "gatsby"
 import { useFlexSearch } from "react-use-flexsearch"
-import { Formik, Form, Field } from "formik"
 
 export default ({ data: { search } }) => {
   const [query, setQuery] = useState(null)
   const results = useFlexSearch(query, search.index, JSON.parse(search.store))
   return (
     <div>
-      <Formik initialValues={{ query: "" }}>
-        <Form
-          type="text"
-          onChange={e => {
-            setQuery(e.target.value)
-          }}
-          name="name"
-        >
-          <Field name="query" placeholder="search an ewok" />
-        </Form>
-      </Formik>
+      <input
+        type="text"
+        onChange={e => {
+          setQuery(e.target.value)
+        }}
+        placeholder="search an ewok"
+      />
       <ul>
         {results.map(result => (
           <li key={result.id}>{result.title}</li>
